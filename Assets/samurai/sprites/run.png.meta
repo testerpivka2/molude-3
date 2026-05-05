@@ -1,28 +1,37 @@
 fileFormatVersion: 2
-guid: 3d9844073599707439834785988c7e27
+guid: 97aaa69a4b454cd47a620a0075a5c86f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8838901565881509911
-    second: samurairun-Sheet-Sheet_0
+      213: 3063816089639099509
+    second: run run _0
   - first:
-      213: -2246819630386697346
-    second: samurairun-Sheet-Sheet_1
+      213: 7465275227355487932
+    second: run run _1
   - first:
-      213: 8662553405440270557
-    second: samurairun-Sheet-Sheet_2
+      213: -3986852373125390202
+    second: run run _2
   - first:
-      213: -8819126208167814324
-    second: samurairun-Sheet-Sheet_3
+      213: 7083429759695943492
+    second: run run _3
   - first:
-      213: 6292194556831431136
-    second: samurairun-Sheet-Sheet_4
+      213: 6991400225594691239
+    second: run run _4
   - first:
-      213: -4050556238862136348
-    second: samurairun-Sheet-Sheet_5
+      213: 7925332879422088387
+    second: run run _5
   - first:
-      213: 1002419582820387437
-    second: samurairun-Sheet-Sheet_6
+      213: -1893495668565257653
+    second: run run _6
+  - first:
+      213: -1425486985109877113
+    second: run run _7
+  - first:
+      213: -1013365960849690829
+    second: run run _8
+  - first:
+      213: -3664287616718386433
+    second: run run _9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,9 +67,9 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -93,7 +102,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -131,155 +140,265 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: samurairun-Sheet-Sheet_0
+      name: run run _0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 8
-        width: 51
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 718e207c4261aaa70800000000000000
-      internalID: 8838901565881509911
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: samurairun-Sheet-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 59
-        y: 9
-        width: 52
+        width: 55
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e7b2d684371b1d0e0800000000000000
-      internalID: -2246819630386697346
+      spriteID: 57c9010308cd48a20800000000000000
+      internalID: 3063816089639099509
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: samurairun-Sheet-Sheet_2
+      name: run run _1
       rect:
         serializedVersion: 2
-        x: 120
+        x: 61
+        y: 8
+        width: 56
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbe1c0d344cf99760800000000000000
+      internalID: 7465275227355487932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run run _2
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 8
+        width: 56
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68020ffc3eadba8c0800000000000000
+      internalID: -3986852373125390202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run run _3
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 8
+        width: 51
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4477b1a36d56d4260800000000000000
+      internalID: 7083429759695943492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run run _4
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 8
+        width: 52
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ae48219671760160800000000000000
+      internalID: 6991400225594691239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run run _5
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 8
+        width: 52
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 5}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c46dac73407cfd60800000000000000
+      internalID: 7925332879422088387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run run _6
+      rect:
+        serializedVersion: 2
+        x: 366
         y: 8
         width: 52
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 3}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dd02e131d62973870800000000000000
-      internalID: 8662553405440270557
+      spriteID: b425d6bb8b3f8b5e0800000000000000
+      internalID: -1893495668565257653
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: samurairun-Sheet-Sheet_3
+      name: run run _7
       rect:
         serializedVersion: 2
-        x: 180
-        y: 7
-        width: 52
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c4bd1dc707b2c9580800000000000000
-      internalID: -8819126208167814324
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: samurairun-Sheet-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 6
-        width: 52
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0e97599ac9d525750800000000000000
-      internalID: 6292194556831431136
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: samurairun-Sheet-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 299
-        y: 6
+        x: 425
+        y: 8
         width: 53
-        height: 46
+        height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4eb41efbf8889c7c0800000000000000
-      internalID: -4050556238862136348
+      spriteID: 78e459cb327a73ce0800000000000000
+      internalID: -1425486985109877113
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: samurairun-Sheet-Sheet_6
+      name: run run _8
       rect:
         serializedVersion: 2
-        x: 360
-        y: 6
+        x: 486
+        y: 8
         width: 52
-        height: 46
+        height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d6a87edac4f49ed00800000000000000
-      internalID: 1002419582820387437
+      spriteID: 33fe414170dcfe1f0800000000000000
+      internalID: -1013365960849690829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run run _9
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 8
+        width: 52
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffa43aaa3d5d52dc0800000000000000
+      internalID: -3664287616718386433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run run _10
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 2
+        width: 572
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ddf36e52c4ac4348b934f61eb14fcdc
+      internalID: -478702531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run run _11
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2
+        width: 598
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19c8aca094285974aa0a40f583c4493a
+      internalID: 1556544110
       vertices: []
       indices: 
       edges: []
@@ -288,7 +407,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f47bf22ac7163ec43889929b5dbd3314
     internalID: 0
     vertices: []
     indices: 
@@ -298,13 +417,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      samurairun-Sheet-Sheet_0: 8838901565881509911
-      samurairun-Sheet-Sheet_1: -2246819630386697346
-      samurairun-Sheet-Sheet_2: 8662553405440270557
-      samurairun-Sheet-Sheet_3: -8819126208167814324
-      samurairun-Sheet-Sheet_4: 6292194556831431136
-      samurairun-Sheet-Sheet_5: -4050556238862136348
-      samurairun-Sheet-Sheet_6: 1002419582820387437
+      run run _0: 3063816089639099509
+      run run _1: 7465275227355487932
+      run run _10: -478702531
+      run run _11: 1556544110
+      run run _2: -3986852373125390202
+      run run _3: 7083429759695943492
+      run run _4: 6991400225594691239
+      run run _5: 7925332879422088387
+      run run _6: -1893495668565257653
+      run run _7: -1425486985109877113
+      run run _8: -1013365960849690829
+      run run _9: -3664287616718386433
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
