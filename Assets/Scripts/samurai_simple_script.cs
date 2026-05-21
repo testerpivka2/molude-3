@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
     private bool isGrounded;
     private bool isBlocking;
 
+    // АТАКИ
     private int comboStep = 0;
     private float lastAttackTime = 0f;
     private bool isAttacking = false;
@@ -20,6 +21,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float comboDelay = 1.0f;
     private float[] attackDurations = new float[] { 0.333f, 0.533f };
 
+    // CIRCLE ATTACK (вместо хитбокса)
     [Header("Circle Attack")]
     public Transform attackPoint;
     public float attackRange = 0.8f;
@@ -125,6 +127,7 @@ public class PlayerMove : MonoBehaviour
                 if (enemyScript != null)
                 {
                     enemyScript.TakeDamage(attackDamage[comboStep]);
+                    Debug.Log($"Урон {attackDamage[comboStep]} по {enemy.name}");
                 }
             }
         }
