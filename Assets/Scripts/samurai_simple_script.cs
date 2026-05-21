@@ -26,17 +26,68 @@ public class PlayerMove : MonoBehaviour
     public LayerMask enemyLayer;
     private int[] attackDamage = { 10, 15 };
 
+    [Header("Dash Settings")]
+    public float dashForce = 15f;
+    public float dashDuration = 0.333f;
+    public float dashCooldown = 1f;
+
+    private bool isDashing = false;
+    private bool canDash = true;
+    private float dashTimer = 0f;
+    private float dashCooldownTimer = 0f;
+    private Vector2 dashDirection;
+
+    private int defaultLayer;
+    private int dashLayerInt;
+    private int playerLayerInt;
+    private int enemyLayerInt;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+        
+        defaultLayer = gameObject.layer;
+        dashLayerInt = LayerMask.NameToLayer("Dash");
+        playerLayerInt = LayerMask.NameToLayer("Player");
+        enemyLayerInt = LayerMask.NameToLayer("Enemy");
+
+        
+        if (dashLayerInt == -1) dashLayerInt = 0;
+        if (playerLayerInt == -1) playerLayerInt = 0;
+        if (enemyLayerInt == -1) enemyLayerInt = 0;
     }
 
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Space) && canDash && !isAttacking && !isDashing)
+        {
+            StartDash();
+        }
+
+        if (isDashing)
+        {
+            dashTimer -= Time.deltaTime;
+            if (dashTimer <= 0)
+            {
+                EndDash();
+            }
+        }
+
+        if (!canDash)
+        {
+            dashCooldownTimer -= Time.deltaTime;
+            if (dashCooldownTimer <= 0)
+            {
+                canDash = true;
+            }
+        }
+
         float moveX = Input.GetAxisRaw("Horizontal");
 
-        if (!isAttacking)
+        if (!isAttacking && !isDashing)
         {
             Vector2 move = new Vector2(moveX, 0);
             move.Normalize();
@@ -45,7 +96,8 @@ public class PlayerMove : MonoBehaviour
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
 
-        if (Input.GetKeyDown(KeyCode.W) && isGrounded && !isAttacking)
+
+        if (Input.GetKeyDown(KeyCode.W) && isGrounded && !isAttacking && !isDashing)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
@@ -53,17 +105,17 @@ public class PlayerMove : MonoBehaviour
         isBlocking = Input.GetKey(KeyCode.LeftShift);
         anim.SetBool("isBlocking", isBlocking);
 
-        bool isRunning = moveX != 0 && !isAttacking;
+        bool isRunning = moveX != 0 && !isAttacking && !isDashing;
         anim.SetBool("isRunning", isRunning);
 
-        if (moveX != 0 && !isAttacking)
+        if (moveX != 0 && !isAttacking && !isDashing)
         {
             Vector3 scale = transform.localScale;
             scale.x = Mathf.Abs(scale.x) * Mathf.Sign(moveX);
             transform.localScale = scale;
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !isDashing)
         {
             TryAttack();
         }
@@ -72,6 +124,35 @@ public class PlayerMove : MonoBehaviour
         {
             ResetCombo();
         }
+    }
+
+    void StartDash()
+    {
+        isDashing = true;
+        canDash = false;
+        dashCooldownTimer = dashCooldown;
+        dashTimer = dashDuration;
+
+        float dashDir = transform.localScale.x > 0 ? 1f : -1f;
+        dashDirection = new Vector2(dashDir, 0);
+
+        gameObject.layer = dashLayerInt;
+
+        Physics2D.IgnoreLayerCollision(playerLayerInt, enemyLayerInt, true);
+
+        rb.linearVelocity = dashDirection * dashForce;
+
+    }
+
+    void EndDash()
+    {
+        isDashing = false;
+
+        gameObject.layer = defaultLayer;
+
+        Physics2D.IgnoreLayerCollision(playerLayerInt, enemyLayerInt, false);
+
+        rb.linearVelocity = Vector2.zero;
     }
 
     void TryAttack()
@@ -125,7 +206,6 @@ public class PlayerMove : MonoBehaviour
                 if (enemyScript != null)
                 {
                     enemyScript.TakeDamage(attackDamage[comboStep]);
-                    Debug.Log($"”рон {attackDamage[comboStep]} по {enemy.name}");
                 }
             }
         }

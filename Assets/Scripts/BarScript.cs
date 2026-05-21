@@ -3,45 +3,78 @@ using UnityEngine.UI;
 
 public class BarScript : MonoBehaviour
 {
-    private float HP = 100f;
-    private Image bar;
+    [Header("Health Settings")]
+    public float maxHP = 100f;
+    private float currentHP;
+
+    [Header("UI")]
+    public Image barImage; 
+    public float regenRate = 0.01f; 
+
+    private Animator anim; 
 
     void Start()
     {
-        bar = GameObject.Find("HPBar").GetComponent<Image>();
+        currentHP = maxHP;
+
+
+        if (barImage == null)
+        {
+            barImage = GameObject.Find("HPBar")?.GetComponent<Image>();
+        }
+
+        anim = GetComponent<Animator>();
+        UpdateBar();
     }
 
     void Update()
     {
-        if (HP < 100)
+ 
+        if (currentHP < maxHP && currentHP > 0)
         {
-            HP += 0.01f;
+            currentHP += regenRate;
+            if (currentHP > maxHP) currentHP = maxHP;
+            UpdateBar();
         }
-
-
-        bar.fillAmount = HP / 100f;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void TakeDamage(float damage)
     {
-        if (collision.gameObject.tag == "Enemy" && HP > 0)
+        if (currentHP <= 0) return;
+
+        currentHP -= damage;
+        if (currentHP < 0) currentHP = 0;
+
+        UpdateBar();
+
+    }
+
+    public void Heal(float amount)
+    {
+        currentHP += amount;
+        if (currentHP > maxHP) currentHP = maxHP;
+        UpdateBar();
+    }
+
+    private void UpdateBar()
+    {
+        if (barImage != null)
         {
-            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-
-            if (enemy != null)
-            {
-                float damage = enemy.damage; 
-
-                if (HP < damage)
-                {
-                    HP = 0;
-                }
-                else
-                {
-                    HP -= damage;
-                }
-
-            }
+            barImage.fillAmount = currentHP / maxHP;
         }
+    }
+
+
+    private void Die()
+    {
+        Debug.Log("ÈÃÐÎÊ ÓÌÅÐ!");
+
+        GetComponent<PlayerMove>().enabled = false;
+
+        if (anim != null)
+        {
+            anim.SetTrigger("Death");
+        }
+ 
     }
 }
