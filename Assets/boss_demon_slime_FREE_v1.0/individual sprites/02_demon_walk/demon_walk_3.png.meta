@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: 97a596e3ceb250d4f8aca3a8df5b24e7
+guid: 914d252c88b41f5409b26e1bd1d11111
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3571635775238715396
-    second: HURT_0
+      213: 4319007114717628303
+    second: demon_walk_3_0
   - first:
-      213: -6552392919759675800
-    second: HURT_1
+      213: 5579683113933575324
+    second: demon_walk_3_1
   - first:
-      213: -4191814458887339610
-    second: HURT_2
+      213: -7439721954974033460
+    second: demon_walk_3_2
   - first:
-      213: -5703626821815436037
-    second: HURT_3
+      213: 1449492541794675179
+    second: demon_walk_3_3
+  - first:
+      213: 2441773937510426003
+    second: demon_walk_3_4
+  - first:
+      213: 8660121776183909433
+    second: demon_walk_3_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,89 +128,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HURT_0
+      name: demon_walk_3_0
       rect:
         serializedVersion: 2
-        x: 35
-        y: 15
-        width: 23
-        height: 34
+        x: 108
+        y: 0
+        width: 67
+        height: 93
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4083e2270dff09130800000000000000
-      internalID: 3571635775238715396
+      spriteID: f870127761230fb30800000000000000
+      internalID: 4319007114717628303
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HURT_1
+      name: demon_walk_3_1
       rect:
         serializedVersion: 2
-        x: 131
-        y: 15
-        width: 23
-        height: 34
+        x: 119
+        y: 92
+        width: 12
+        height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 86e90f40b593115a0800000000000000
-      internalID: -6552392919759675800
+      spriteID: c94914dca340f6d40800000000000000
+      internalID: 5579683113933575324
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HURT_2
+      name: demon_walk_3_2
       rect:
         serializedVersion: 2
-        x: 228
-        y: 15
-        width: 22
-        height: 34
+        x: 128
+        y: 90
+        width: 6
+        height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6a18ca575fea3d5c0800000000000000
-      internalID: -4191814458887339610
+      spriteID: cc9191e9c4cc0c890800000000000000
+      internalID: -7439721954974033460
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HURT_3
+      name: demon_walk_3_3
       rect:
         serializedVersion: 2
-        x: 325
-        y: 15
-        width: 19
-        height: 34
+        x: 152
+        y: 71
+        width: 20
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bfcfc4aef95a8d0b0800000000000000
-      internalID: -5703626821815436037
+      spriteID: be9ef3a79c1ad1410800000000000000
+      internalID: 1449492541794675179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon_walk_3_4
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 90
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 395ad17857ce2e120800000000000000
+      internalID: 2441773937510426003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon_walk_3_5
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 91
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93c11154fdeee2870800000000000000
+      internalID: 8660121776183909433
       vertices: []
       indices: 
       edges: []
@@ -213,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7b96c15402b93e14885d67bae574b620
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -221,14 +271,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      HURT_0: 3571635775238715396
-      HURT_1: -6552392919759675800
-      HURT_2: -4191814458887339610
-      HURT_3: -5703626821815436037
+      demon_walk_3_0: 4319007114717628303
+      demon_walk_3_1: 5579683113933575324
+      demon_walk_3_2: -7439721954974033460
+      demon_walk_3_3: 1449492541794675179
+      demon_walk_3_4: 2441773937510426003
+      demon_walk_3_5: 8660121776183909433
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

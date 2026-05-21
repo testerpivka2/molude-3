@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: 97a596e3ceb250d4f8aca3a8df5b24e7
+guid: ee28e6889e37b7b44930e8880647092b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3571635775238715396
-    second: HURT_0
+      213: -4126383020163400563
+    second: demon_death_8_0
   - first:
-      213: -6552392919759675800
-    second: HURT_1
+      213: 6738688187793656623
+    second: demon_death_8_1
   - first:
-      213: -4191814458887339610
-    second: HURT_2
+      213: 7171669889170767624
+    second: demon_death_8_2
   - first:
-      213: -5703626821815436037
-    second: HURT_3
+      213: -6667905631005642464
+    second: demon_death_8_3
+  - first:
+      213: 6375023095721409622
+    second: demon_death_8_4
+  - first:
+      213: 8007146454968847092
+    second: demon_death_8_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,89 +128,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HURT_0
+      name: demon_death_8_0
       rect:
         serializedVersion: 2
-        x: 35
-        y: 15
-        width: 23
-        height: 34
+        x: 116
+        y: 115
+        width: 6
+        height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4083e2270dff09130800000000000000
-      internalID: 3571635775238715396
+      spriteID: d8cf4f371842cb6c0800000000000000
+      internalID: -4126383020163400563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HURT_1
+      name: demon_death_8_1
       rect:
         serializedVersion: 2
-        x: 131
-        y: 15
-        width: 23
-        height: 34
+        x: 133
+        y: 110
+        width: 6
+        height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 86e90f40b593115a0800000000000000
-      internalID: -6552392919759675800
+      spriteID: f2bcf852431a48d50800000000000000
+      internalID: 6738688187793656623
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HURT_2
+      name: demon_death_8_2
       rect:
         serializedVersion: 2
-        x: 228
-        y: 15
-        width: 22
-        height: 34
+        x: 147
+        y: 100
+        width: 18
+        height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6a18ca575fea3d5c0800000000000000
-      internalID: -4191814458887339610
+      spriteID: 80f736e54c3e68360800000000000000
+      internalID: 7171669889170767624
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HURT_3
+      name: demon_death_8_3
       rect:
         serializedVersion: 2
-        x: 325
-        y: 15
-        width: 19
-        height: 34
+        x: 176
+        y: 100
+        width: 8
+        height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bfcfc4aef95a8d0b0800000000000000
-      internalID: -5703626821815436037
+      spriteID: 021f41c1827d673a0800000000000000
+      internalID: -6667905631005642464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon_death_8_4
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 0
+        width: 133
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65cb26faab1a87850800000000000000
+      internalID: 6375023095721409622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon_death_8_5
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 89
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fa42f0f6491f1f60800000000000000
+      internalID: 8007146454968847092
       vertices: []
       indices: 
       edges: []
@@ -213,7 +263,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7b96c15402b93e14885d67bae574b620
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -221,14 +271,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      HURT_0: 3571635775238715396
-      HURT_1: -6552392919759675800
-      HURT_2: -4191814458887339610
-      HURT_3: -5703626821815436037
+      demon_death_8_0: -4126383020163400563
+      demon_death_8_1: 6738688187793656623
+      demon_death_8_2: 7171669889170767624
+      demon_death_8_3: -6667905631005642464
+      demon_death_8_4: 6375023095721409622
+      demon_death_8_5: 8007146454968847092
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

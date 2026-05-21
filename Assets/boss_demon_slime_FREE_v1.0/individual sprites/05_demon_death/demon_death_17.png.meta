@@ -1,28 +1,34 @@
 fileFormatVersion: 2
-guid: cedd0eb1ae0b66341a97db48a06d97d8
+guid: 8e85a36e7b32ceb459f57927735d7c38
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8886490851947454144
-    second: ATTACK 1_0
+      213: 2900190355029550299
+    second: demon_death_17_0
   - first:
-      213: 6548489276043825817
-    second: ATTACK 1_1
+      213: 3300136157739842839
+    second: demon_death_17_1
   - first:
-      213: 4970056502602508726
-    second: ATTACK 1_2
+      213: 4529776193489114315
+    second: demon_death_17_2
   - first:
-      213: 1935231433567745852
-    second: ATTACK 1_3
+      213: -6473208680821263701
+    second: demon_death_17_3
   - first:
-      213: 8810267081325647525
-    second: ATTACK 1_4
+      213: 4565106046052093313
+    second: demon_death_17_4
   - first:
-      213: 4172772526038875549
-    second: ATTACK 1_5
+      213: -3839138748825531372
+    second: demon_death_17_5
   - first:
-      213: -9022913262071093832
-    second: ATTACK 1_6
+      213: -8382079527977350317
+    second: demon_death_17_6
+  - first:
+      213: -4622290649947476853
+    second: demon_death_17_7
+  - first:
+      213: -231702020056848560
+    second: demon_death_17_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -131,155 +137,199 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ATTACK 1_0
+      name: demon_death_17_0
       rect:
         serializedVersion: 2
-        x: 42
-        y: 15
-        width: 21
-        height: 29
+        x: 158
+        y: 116
+        width: 9
+        height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0ce1612e858235b70800000000000000
-      internalID: 8886490851947454144
+      spriteID: bd4ec8413cb8f3820800000000000000
+      internalID: 2900190355029550299
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ATTACK 1_1
+      name: demon_death_17_1
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 113
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71d7180c9507ccd20800000000000000
+      internalID: 3300136157739842839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon_death_17_2
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 82
+        width: 7
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc490fcb27ffcde30800000000000000
+      internalID: 4529776193489114315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon_death_17_3
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 100
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba27ca6500b8a26a0800000000000000
+      internalID: -6473208680821263701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon_death_17_4
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 76
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18d4cec03c38a5f30800000000000000
+      internalID: 4565106046052093313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon_death_17_5
       rect:
         serializedVersion: 2
         x: 138
-        y: 15
-        width: 21
-        height: 29
+        y: 81
+        width: 6
+        height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9921c0a1d48e0ea50800000000000000
-      internalID: 6548489276043825817
+      spriteID: 41c01d806a3a8bac0800000000000000
+      internalID: -3839138748825531372
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ATTACK 1_2
+      name: demon_death_17_6
       rect:
         serializedVersion: 2
-        x: 234
-        y: 15
-        width: 20
-        height: 28
+        x: 167
+        y: 76
+        width: 6
+        height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6b92e3f7e0039f440800000000000000
-      internalID: 4970056502602508726
+      spriteID: 35b06d7541fdcab80800000000000000
+      internalID: -8382079527977350317
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ATTACK 1_3
+      name: demon_death_17_7
       rect:
         serializedVersion: 2
-        x: 330
-        y: 15
-        width: 20
-        height: 27
+        x: 188
+        y: 77
+        width: 7
+        height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c37b9fb4cb25bda10800000000000000
-      internalID: 1935231433567745852
+      spriteID: b8c6541d4235adfb0800000000000000
+      internalID: -4622290649947476853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ATTACK 1_4
+      name: demon_death_17_8
       rect:
         serializedVersion: 2
-        x: 421
-        y: 14
-        width: 56
-        height: 33
+        x: 108
+        y: 0
+        width: 116
+        height: 13
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5a69bbe4b3b544a70800000000000000
-      internalID: 8810267081325647525
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ATTACK 1_5
-      rect:
-        serializedVersion: 2
-        x: 516
-        y: 15
-        width: 49
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d9d7e0f018aa8e930800000000000000
-      internalID: 4172772526038875549
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ATTACK 1_6
-      rect:
-        serializedVersion: 2
-        x: 612
-        y: 15
-        width: 38
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8b5671f813c28c280800000000000000
-      internalID: -9022913262071093832
+      spriteID: 05765c88d34d8ccf0800000000000000
+      internalID: -231702020056848560
       vertices: []
       indices: 
       edges: []
@@ -288,7 +338,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8ff3abde341f6264f896e35477fb7078
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -296,17 +346,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      ATTACK 1_0: 8886490851947454144
-      ATTACK 1_1: 6548489276043825817
-      ATTACK 1_2: 4970056502602508726
-      ATTACK 1_3: 1935231433567745852
-      ATTACK 1_4: 8810267081325647525
-      ATTACK 1_5: 4172772526038875549
-      ATTACK 1_6: -9022913262071093832
+      demon_death_17_0: 2900190355029550299
+      demon_death_17_1: 3300136157739842839
+      demon_death_17_2: 4529776193489114315
+      demon_death_17_3: -6473208680821263701
+      demon_death_17_4: 4565106046052093313
+      demon_death_17_5: -3839138748825531372
+      demon_death_17_6: -8382079527977350317
+      demon_death_17_7: -4622290649947476853
+      demon_death_17_8: -231702020056848560
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

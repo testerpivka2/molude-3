@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: 97a596e3ceb250d4f8aca3a8df5b24e7
+guid: 506afc31943b2b646acf5bb47c25346b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3571635775238715396
-    second: HURT_0
+      213: 6276261735365323200
+    second: demon_cleave_15_0
   - first:
-      213: -6552392919759675800
-    second: HURT_1
+      213: 7231745517739097793
+    second: demon_cleave_15_1
   - first:
-      213: -4191814458887339610
-    second: HURT_2
-  - first:
-      213: -5703626821815436037
-    second: HURT_3
+      213: 6115244854211691535
+    second: demon_cleave_15_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,89 +119,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HURT_0
+      name: demon_cleave_15_0
       rect:
         serializedVersion: 2
-        x: 35
-        y: 15
-        width: 23
-        height: 34
+        x: 105
+        y: 69
+        width: 14
+        height: 38
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4083e2270dff09130800000000000000
-      internalID: 3571635775238715396
+      spriteID: 0c9a3d59bc2c91750800000000000000
+      internalID: 6276261735365323200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HURT_1
+      name: demon_cleave_15_1
       rect:
         serializedVersion: 2
-        x: 131
-        y: 15
-        width: 23
-        height: 34
+        x: 105
+        y: 0
+        width: 82
+        height: 94
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 86e90f40b593115a0800000000000000
-      internalID: -6552392919759675800
+      spriteID: 1cebcd2ab325c5460800000000000000
+      internalID: 7231745517739097793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: HURT_2
+      name: demon_cleave_15_2
       rect:
         serializedVersion: 2
-        x: 228
-        y: 15
-        width: 22
-        height: 34
+        x: 151
+        y: 70
+        width: 12
+        height: 33
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6a18ca575fea3d5c0800000000000000
-      internalID: -4191814458887339610
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HURT_3
-      rect:
-        serializedVersion: 2
-        x: 325
-        y: 15
-        width: 19
-        height: 34
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bfcfc4aef95a8d0b0800000000000000
-      internalID: -5703626821815436037
+      spriteID: f04c2d18bc6bdd450800000000000000
+      internalID: 6115244854211691535
       vertices: []
       indices: 
       edges: []
@@ -213,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7b96c15402b93e14885d67bae574b620
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -221,14 +196,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      HURT_0: 3571635775238715396
-      HURT_1: -6552392919759675800
-      HURT_2: -4191814458887339610
-      HURT_3: -5703626821815436037
+      demon_cleave_15_0: 6276261735365323200
+      demon_cleave_15_1: 7231745517739097793
+      demon_cleave_15_2: 6115244854211691535
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
