@@ -24,7 +24,18 @@ public class SamuraiAttackState : IEnemyState
 
         if (timer >= attackDuration)
         {
-            enemy.ChangeState(new SamuraiIdleState(enemy));
+            enemy.lastAttackTime = Time.time; 
+
+            int randomChoice = Random.Range(0, 100);
+
+            if (randomChoice < 50) 
+            {
+                enemy.ChangeState(new SamuraiRetreatState(enemy));
+            }
+            else 
+            {
+                enemy.ChangeState(new SamuraiIdleState(enemy));
+            }
         }
     }
 

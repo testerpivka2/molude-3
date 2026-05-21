@@ -4,8 +4,12 @@ public class SamuraiEnemy : MonoBehaviour
 {
 
     public float speed = 3f;
+    public float retreatSpeed = 2f;
     public float attackRange = 1.5f;
+    public float attackCooldown = 0.7f;
     public Transform player;
+
+    [HideInInspector] public float lastAttackTime = -999f;
 
     public Animator Anim { get; private set; }
     public Rigidbody2D Rb { get; private set; }

@@ -24,8 +24,7 @@ public class SamuraiIdleState : IEnemyState
         if (timer < 0.5f) return;
 
         float distanceToPlayer = Vector2.Distance(enemy.transform.position, enemy.player.position);
-
-        if (distanceToPlayer <= enemy.attackRange)
+        if (distanceToPlayer <= enemy.attackRange && Time.time >= enemy.lastAttackTime + enemy.attackCooldown)
         {
             enemy.ChangeState(new SamuraiAttackState(enemy));
         }
