@@ -35,7 +35,7 @@ public class SlimeDemon : Enemy
 
         if (currentHealth <= maxHealth / 2)
         {
-            moveSpeed = originalMoveSpeed * 1.5f;
+            moveSpeed = originalMoveSpeed * 2f;
         }
     }
 

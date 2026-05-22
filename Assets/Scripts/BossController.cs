@@ -204,7 +204,7 @@ public class BossController : MonoBehaviour
         foreach (var hit in hits)
         {
             // Замени PlayerHealth на имя своего скрипта здоровья игрока
-            hit.GetComponent<PlayerHealth>()?.TakeDamage(meleeDamage);
+            hit.GetComponent<BarScript>()?.TakeDamage(meleeDamage);
         }
     }
 
