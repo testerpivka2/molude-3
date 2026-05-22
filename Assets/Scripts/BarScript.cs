@@ -11,12 +11,15 @@ public class BarScript : MonoBehaviour
     public Image barImage; 
     public float regenRate = 0.01f; 
 
-    private Animator anim; 
+    private Animator anim;
+
+    private PlayerMove playerMove;
 
     void Start()
     {
         currentHP = maxHP;
 
+        playerMove = GetComponent<PlayerMove>();
 
         if (barImage == null)
         {
@@ -41,6 +44,11 @@ public class BarScript : MonoBehaviour
     public void TakeDamage(float damage)
     {
         if (currentHP <= 0) return;
+
+        if (playerMove != null && playerMove.IsDashing())
+        {
+            return;
+        }
 
         currentHP -= damage;
         if (currentHP < 0) currentHP = 0;
@@ -67,7 +75,6 @@ public class BarScript : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("ÈÃÐÎÊ ÓÌÅÐ!");
 
         GetComponent<PlayerMove>().enabled = false;
 

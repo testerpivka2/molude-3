@@ -2,14 +2,15 @@
 
 public class SlimeDemon : Enemy
 {
-    [Header("Boss Settings")]
-    public float jumpForce = 8f;
-    public float jumpCooldown = 3f;
 
-    private bool canJump = true;
     private float originalMoveSpeed;
 
-    protected override void Start()
+    [Header("Boss Attack")]
+    public Transform attackPoint;
+    public LayerMask playerLayer;
+    public int bossDamage = 15;
+
+    protected override void Start() 
     {
         base.Start();
 
@@ -19,7 +20,7 @@ public class SlimeDemon : Enemy
         originalMoveSpeed = moveSpeed;
         moveSpeed = 3f;
         agroRange = 10f;
-        attackRange = 2f;
+        attackRange = 5f;
         attackCooldown = 1.5f;
     }
 
@@ -31,10 +32,6 @@ public class SlimeDemon : Enemy
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        if (canJump && distanceToPlayer < 3f && IsGrounded())
-        {
-            StartCoroutine(BossJump());
-        }
 
         if (currentHealth <= maxHealth / 2)
         {
@@ -48,17 +45,22 @@ public class SlimeDemon : Enemy
         return hit.collider != null;
     }
 
-    private System.Collections.IEnumerator BossJump()
-    {
-        canJump = false;
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-        yield return new WaitForSeconds(jumpCooldown);
-        canJump = true;
-    }
 
     protected override void DealDamage()
     {
-        base.DealDamage();
+        Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
+
+        foreach (Collider2D player in hitPlayers)
+        {
+            if (player.CompareTag("Player"))
+            {
+                BarScript playerHealth = player.GetComponent<BarScript>();
+                if (playerHealth != null)
+                {
+                    playerHealth.TakeDamage(bossDamage);
+                }
+            }
+        }
     }
 
     protected override void Die()
@@ -72,11 +74,6 @@ public class SlimeDemon : Enemy
         {
             anim.SetTrigger("Death");
         }
-
-
-        Collider2D col = GetComponent<Collider2D>();
-        if (col != null)
-            col.enabled = false;
 
         Destroy(gameObject, 3f);
     }

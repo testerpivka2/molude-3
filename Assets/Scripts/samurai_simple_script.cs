@@ -49,7 +49,7 @@ public class PlayerMove : MonoBehaviour
 
         
         defaultLayer = gameObject.layer;
-        dashLayerInt = LayerMask.NameToLayer("Dash");
+        dashLayerInt = LayerMask.NameToLayer("dashLayer");
         playerLayerInt = LayerMask.NameToLayer("Player");
         enemyLayerInt = LayerMask.NameToLayer("Enemy");
 
@@ -129,6 +129,8 @@ public class PlayerMove : MonoBehaviour
     void StartDash()
     {
         isDashing = true;
+        anim.SetBool("Dash", isDashing);
+
         canDash = false;
         dashCooldownTimer = dashCooldown;
         dashTimer = dashDuration;
@@ -138,7 +140,7 @@ public class PlayerMove : MonoBehaviour
 
         gameObject.layer = dashLayerInt;
 
-        Physics2D.IgnoreLayerCollision(playerLayerInt, enemyLayerInt, true);
+        Physics2D.IgnoreLayerCollision(dashLayerInt, enemyLayerInt, true);
 
         rb.linearVelocity = dashDirection * dashForce;
 
@@ -147,10 +149,12 @@ public class PlayerMove : MonoBehaviour
     void EndDash()
     {
         isDashing = false;
+        anim.SetBool("Dash", isDashing);
+
 
         gameObject.layer = defaultLayer;
 
-        Physics2D.IgnoreLayerCollision(playerLayerInt, enemyLayerInt, false);
+        Physics2D.IgnoreLayerCollision(dashLayerInt, enemyLayerInt, false);
 
         rb.linearVelocity = Vector2.zero;
     }
@@ -209,6 +213,11 @@ public class PlayerMove : MonoBehaviour
                 }
             }
         }
+    }
+
+    public bool IsDashing()
+    {
+        return isDashing;
     }
 
     void OnDrawGizmosSelected()
