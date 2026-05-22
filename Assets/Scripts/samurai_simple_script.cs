@@ -27,9 +27,9 @@ public class PlayerMove : MonoBehaviour
     private int[] attackDamage = { 10, 15 };
 
     [Header("Dash Settings")]
-    public float dashForce = 15f;
+    public float dashForce = 100f;
     public float dashDuration = 0.333f;
-    public float dashCooldown = 1f;
+    public float dashCooldown = 0.4f;
 
     private bool isDashing = false;
     private bool canDash = true;

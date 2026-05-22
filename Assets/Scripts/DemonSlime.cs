@@ -2,54 +2,82 @@
 
 public class SlimeDemon : Enemy
 {
-    [Header("Slime Demon Settings")]
-    public float agroRange = 20f;
+    [Header("Boss Settings")]
+    public float jumpForce = 8f;
+    public float jumpCooldown = 3f;
 
-    private Transform player;
+    private bool canJump = true;
+    private float originalMoveSpeed;
 
     protected override void Start()
     {
         base.Start();
-        player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
+        maxHealth = 100;
+        currentHealth = maxHealth;
+        damage = 20f;
+        originalMoveSpeed = moveSpeed;
+        moveSpeed = 3f;
+        agroRange = 10f;
+        attackRange = 2f;
+        attackCooldown = 1.5f;
     }
 
-    protected override void Move(Vector2 direction)
+    protected override void Update()
     {
-        if (isDead) return;
+        base.Update();
 
-        rb.linearVelocity = new Vector2(direction.x * moveSpeed, rb.linearVelocity.y);
-        isMoving = direction.x != 0;
-
-        if (anim != null)
-        {
-            anim.SetBool("IsWalking", isMoving);
-        }
-
-        if (direction.x != 0)
-        {
-            Vector3 scale = transform.localScale;
-            scale.x = Mathf.Abs(scale.x) * -Mathf.Sign(direction.x); 
-            transform.localScale = scale;
-        }
-    }
-
-    void Update()
-    {
-        if (isDead) return;
-        if (player == null) return;
+        if (isDead || player == null) return;
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        if (distanceToPlayer <= agroRange)
+        if (canJump && distanceToPlayer < 3f && IsGrounded())
         {
-            Vector2 direction = (player.position - transform.position).normalized;
-            Move(direction); 
+            StartCoroutine(BossJump());
         }
-        else
+
+        if (currentHealth <= maxHealth / 2)
         {
-            StopMoving();
+            moveSpeed = originalMoveSpeed * 1.5f;
         }
     }
 
+    private bool IsGrounded()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.2f);
+        return hit.collider != null;
+    }
+
+    private System.Collections.IEnumerator BossJump()
+    {
+        canJump = false;
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        yield return new WaitForSeconds(jumpCooldown);
+        canJump = true;
+    }
+
+    protected override void DealDamage()
+    {
+        base.DealDamage();
+    }
+
+    protected override void Die()
+    {
+        if (isDead) return;
+
+        isDead = true;
+        StopMoving();
+
+        if (anim != null)
+        {
+            anim.SetTrigger("Death");
+        }
+
+
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null)
+            col.enabled = false;
+
+        Destroy(gameObject, 3f);
+    }
 }
