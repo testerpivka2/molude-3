@@ -1,42 +1,33 @@
 using System.Collections;
 using UnityEngine;
 
-/// <summary>
-/// Босс на основе HeavyBandit (Bandits - Pixel Art).
-/// Анимации: Idle, Run, Jump, Attack, CombatIdle, Hurt, Death, Recover
-/// Добавь на объект вместо (или рядом с отключённым) Bandit.cs
-/// </summary>
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(BossHealth))]
 public class BossController : MonoBehaviour
 {
-    // ─── Ссылки ────────────────────────────────────────────────
     [Header("References")]
     public Transform player;
-    public Transform groundCheck;       // пустой дочерний объект у ног
+    public Transform groundCheck;
     public LayerMask groundLayer;
 
     [Header("Melee Hitbox")]
-    public Transform attackPoint;       // пустой дочерний объект у руки
+    public Transform attackPoint;
     public float attackRadius = 0.8f;
     public LayerMask playerLayer;
 
-    // ─── Движение ──────────────────────────────────────────────
     [Header("Movement")]
     public float moveSpeed = 3f;
     public float phase2Speed = 5f;
     public float jumpForce = 7.5f;
-    public float stopDistance = 1.5f;   // дистанция для атаки в ближнем бою
+    public float stopDistance = 1.5f;
 
-    // ─── Атаки ─────────────────────────────────────────────────
     [Header("Attack Settings")]
     public float meleeDamage = 20f;
     public float attackCooldown = 2f;
     public float phase2Cooldown = 1.2f;
-    public float jumpAttackChance = 0.3f; // 30% шанс прыжка к игроку
+    public float jumpAttackChance = 0.3f;
 
-    // ─── Состояние ─────────────────────────────────────────────
     enum State { Idle, Chase, Attack, JumpAttack, Hurt, Dead }
     State state = State.Idle;
 
@@ -49,21 +40,17 @@ public class BossController : MonoBehaviour
     private bool isGrounded = false;
     private bool facingRight = false;
 
-    // ─── Animator параметры ────────────────────────────────────
-    // Проверь в своём AnimController что параметры называются именно так.
-    // Если нет — переименуй здесь.
-    const string ANIM_RUN          = "Run";         // bool
-    const string ANIM_COMBAT_IDLE  = "CombatIdle";  // bool
-    const string ANIM_ATTACK       = "Attack";      // trigger
-    const string ANIM_JUMP         = "Jump";        // trigger
-    const string ANIM_HURT         = "Hurt";        // trigger
-    const string ANIM_DEATH        = "Death";       // trigger
+    const string ANIM_RUN = "Run";
+    const string ANIM_COMBAT_IDLE = "CombatIdle";
+    const string ANIM_ATTACK = "Attack";
+    const string ANIM_JUMP = "Jump";
+    const string ANIM_HURT = "Hurt";
+    const string ANIM_DEATH = "Death";
 
-    // ═══════════════════════════════════════════════════════════
     void Awake()
     {
-        rb    = GetComponent<Rigidbody2D>();
-        anim  = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         health = GetComponent<BossHealth>();
 
         health.onPhase2.AddListener(EnterPhase2);
@@ -88,12 +75,8 @@ public class BossController : MonoBehaviour
                 ChasePlayer();
                 TryStartAttack();
                 break;
-
-            // Attack и JumpAttack управляются корутинами
         }
     }
-
-    // ─── Логика движения ───────────────────────────────────────
 
     void TransitionToChase()
     {
@@ -126,8 +109,6 @@ public class BossController : MonoBehaviour
         FlipTowards(dir);
     }
 
-    // ─── Атаки ─────────────────────────────────────────────────
-
     void TryStartAttack()
     {
         if (attackTimer > 0f) return;
@@ -135,7 +116,6 @@ public class BossController : MonoBehaviour
 
         attackTimer = isPhase2 ? phase2Cooldown : attackCooldown;
 
-        // Фаза 2: иногда прыгает
         if (isPhase2 && !isGrounded == false && Random.value < jumpAttackChance)
             StartCoroutine(JumpAttack());
         else
@@ -151,12 +131,11 @@ public class BossController : MonoBehaviour
         SetAnimBool(ANIM_COMBAT_IDLE, false);
         anim.SetTrigger(ANIM_ATTACK);
 
-        yield return new WaitForSeconds(0.4f); // ждём замаха
+        yield return new WaitForSeconds(0.4f);
 
-        // Наносим урон всем игрокам в радиусе
         DealMeleeDamage();
 
-        yield return new WaitForSeconds(0.4f); // ждём окончания анимации
+        yield return new WaitForSeconds(0.4f);
 
         if (state != State.Dead)
             state = State.Chase;
@@ -170,25 +149,18 @@ public class BossController : MonoBehaviour
 
         anim.SetTrigger(ANIM_JUMP);
 
-        // Прыжок в сторону игрока
         float dir = player.position.x > transform.position.x ? 1f : -1f;
         rb.AddForce(new Vector2(dir * 3f, jumpForce), ForceMode2D.Impulse);
         FlipTowards(dir);
 
         yield return new WaitForSeconds(0.3f);
 
-        // Ждём приземления
         yield return new WaitUntil(() => isGrounded);
 
-        // Атака после приземления
         anim.SetTrigger(ANIM_ATTACK);
         yield return new WaitForSeconds(0.3f);
         DealMeleeDamage();
         yield return new WaitForSeconds(0.3f);
-
-        // Recover анимация (если есть параметр)
-        // anim.SetTrigger("Recover");
-        // yield return new WaitForSeconds(0.5f);
 
         if (state != State.Dead)
             state = State.Chase;
@@ -203,21 +175,15 @@ public class BossController : MonoBehaviour
 
         foreach (var hit in hits)
         {
-            // Замени PlayerHealth на имя своего скрипта здоровья игрока
             hit.GetComponent<BarScript>()?.TakeDamage(meleeDamage);
         }
     }
-
-    // ─── Фаза 2 ────────────────────────────────────────────────
 
     void EnterPhase2()
     {
         isPhase2 = true;
         Debug.Log("Boss: Phase 2!");
-        // Можно добавить эффект (вспышка, звук, частицы)
     }
-
-    // ─── Утилиты ───────────────────────────────────────────────
 
     void CheckGrounded()
     {
@@ -245,7 +211,6 @@ public class BossController : MonoBehaviour
         anim.SetBool(param, val);
     }
 
-    // Рисуем hitbox атаки в редакторе
     void OnDrawGizmosSelected()
     {
         if (attackPoint != null)

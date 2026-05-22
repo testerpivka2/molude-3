@@ -9,7 +9,7 @@ public class BossHealth : MonoBehaviour
 
     [Header("Phase 2 Threshold (0-1)")]
     [Range(0f, 1f)]
-    public float phase2At = 0.5f; // 50% HP
+    public float phase2At = 0.5f; 
 
     [HideInInspector] public UnityEvent onPhase2;
     [HideInInspector] public UnityEvent onDeath;
@@ -34,7 +34,7 @@ public class BossHealth : MonoBehaviour
         currentHealth -= amount;
         currentHealth = Mathf.Max(currentHealth, 0f);
 
-        animator.SetTrigger("Hurt"); // → HeavyBandit_Hurt
+        animator.SetTrigger("Hurt"); 
 
         if (!phase2Triggered && currentHealth / maxHealth <= phase2At)
         {
@@ -51,7 +51,7 @@ public class BossHealth : MonoBehaviour
         if (isDead) return;
         isDead = true;
 
-        animator.SetTrigger("Death"); // → HeavyBandit_Death
+        animator.SetTrigger("Death"); 
         onDeath.Invoke();
 
         GetComponent<BossController>().enabled = false;
@@ -60,6 +60,6 @@ public class BossHealth : MonoBehaviour
         Destroy(gameObject, 2.5f);
     }
 
-    // Вызывай в UI для полоски здоровья
+    
     public float HealthPercent => currentHealth / maxHealth;
 }

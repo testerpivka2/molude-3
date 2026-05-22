@@ -113,7 +113,6 @@ public class Enemy : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damage);
-                Debug.Log($"{gameObject.name} атаковал игрока на {damage} урона");
             }
         }
     }
@@ -123,7 +122,6 @@ public class Enemy : MonoBehaviour
         if (isDead) return;
 
         currentHealth -= amount;
-        Debug.Log($"{gameObject.name} получил {amount} урона. ќсталось: {currentHealth}");
 
         if (anim != null)
         {
