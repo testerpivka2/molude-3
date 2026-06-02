@@ -220,6 +220,13 @@ public class PlayerMove : MonoBehaviour
         return isDashing;
     }
 
+    public void UpdateDamage(int newDamage)
+    {
+        attackDamage[0] = newDamage;
+
+        attackDamage[1] = newDamage + 5;
+    }
+
     void OnDrawGizmosSelected()
     {
         if (attackPoint != null)

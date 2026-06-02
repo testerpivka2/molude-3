@@ -72,6 +72,10 @@ public class BarScript : MonoBehaviour
         }
     }
 
+    public float GetCurrentHP()
+    {
+        return currentHP;
+    }
 
     private void Die()
     {

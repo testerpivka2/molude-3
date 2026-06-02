@@ -14,11 +14,13 @@ public class ShopUI : MonoBehaviour
 
     [Header("Prices")]
     public int damageUpgradeCost = 10;
-    public int healCost = 5;
-    public int damageUpgradeAmount = 5;
+    public int healCost = 10;
+    public int damageUpgradeAmount = 1;
+    public int HealAmount = 5;
 
     private PlayerMove playerMove;
     private BarScript playerHealth;
+    private PlayerGold playerGold;
 
     void Start()
     {
@@ -29,6 +31,7 @@ public class ShopUI : MonoBehaviour
         {
             playerMove = player.GetComponent<PlayerMove>();
             playerHealth = player.GetComponent<BarScript>();
+            playerGold = player.GetComponent<PlayerGold>();
         }
 
         buyDamageButton.onClick.AddListener(BuyDamage);
@@ -40,58 +43,34 @@ public class ShopUI : MonoBehaviour
 
     void UpdateUI()
     {
-        if (goldText != null)
+        if (goldText != null && playerGold != null)
         {
-            goldText.text = $"Current gold: {PlayerPrefs.GetInt("Gold", 0)}";
-        }
-
-    }
-
-    void BuyDamage()
-    {
-        int currentGold = PlayerPrefs.GetInt("Gold", 0);
-
-        if (currentGold >= damageUpgradeCost)
-        {
-            PlayerPrefs.SetInt("Gold", currentGold - damageUpgradeCost);
-
-            int currentDamage = PlayerPrefs.GetInt("PlayerDamage", 10);
-            PlayerPrefs.SetInt("PlayerDamage", currentDamage + damageUpgradeAmount);
-
-            // Обновляем урон в скрипте атаки игрока
-            //if (playerMove != null)
-            //{
-            //    // Нужно обновить attackDamage в PlayerMove
-            //    playerMove.UpdateDamage(PlayerPrefs.GetInt("PlayerDamage", 10));
-            //}
-
-            UpdateUI();
-        }
-        else
-        {
-
+            goldText.text = $"Current gold: {playerGold.currentGold}";
         }
     }
 
-    void BuyHeal()
+    public void BuyDamage()
     {
-        int currentGold = PlayerPrefs.GetInt("Gold", 0);
+        PlayerGold playerGold = GameObject.FindGameObjectWithTag("Player")?.GetComponent<PlayerGold>();
+        PlayerDamage playerDamage = GameObject.FindGameObjectWithTag("Player")?.GetComponent<PlayerDamage>();
 
-        if (currentGold >= healCost)
+        if (playerGold != null && playerDamage != null && playerGold.SpendGold(damageUpgradeCost))
         {
-            PlayerPrefs.SetInt("Gold", currentGold - healCost);
-
-            if (playerHealth != null)
-            {
-                playerHealth.Heal(10);
-            }
-
+            playerDamage.UpgradeDamage(damageUpgradeAmount);
             UpdateUI();
-
         }
-        else
-        {
+    }
 
+
+    public void BuyHeal()
+    {
+        PlayerGold playerGold = GameObject.FindGameObjectWithTag("Player")?.GetComponent<PlayerGold>();
+        BarScript playerHealth = GameObject.FindGameObjectWithTag("Player")?.GetComponent<BarScript>();
+
+        if (playerGold != null && playerHealth != null && playerGold.SpendGold(healCost))
+        {
+            playerHealth.Heal(HealAmount);
+            UpdateUI();
         }
     }
 

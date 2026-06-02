@@ -20,6 +20,9 @@ public class Enemy : MonoBehaviour
     protected bool isMoving = false;
     protected bool canAttack = true;
 
+    [Header("Drop")]
+    public int goldDrop = 10;
+
     protected virtual void Start()
     {
         currentHealth = maxHealth;
@@ -140,6 +143,15 @@ public class Enemy : MonoBehaviour
 
         isDead = true;
         StopMoving();
+
+        if (player != null)
+        {
+            PlayerGold playerGold = player.GetComponent<PlayerGold>();
+            if (playerGold != null)
+            {
+                playerGold.AddGold(goldDrop);
+            }
+        }
 
         if (anim != null)
         {
